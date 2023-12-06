@@ -4,12 +4,11 @@ package vista;
 import java.awt.Color;
 import javax.swing.BorderFactory;
 
-public class FromNiveles extends javax.swing.JFrame {
-
+public class FormNiveles extends javax.swing.JFrame {
     private TableroSudoku tableroSudoku;
     private int xPos;
     private int yPos;
-    public FromNiveles(TableroSudoku tableroSudoku) {
+    public FormNiveles(TableroSudoku tableroSudoku) {
         initComponents();
         this.tableroSudoku = tableroSudoku;
         panelFondo.setBorder(BorderFactory.createLineBorder(Color.BLACK, 1));

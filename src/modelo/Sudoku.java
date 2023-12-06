@@ -6,7 +6,7 @@ import java.util.stream.IntStream;
 import javax.swing.JTextField;
 
 public class Sudoku {
-    private int sudoku[][];
+    private int[][] sudoku;
 
     public Sudoku() {
         sudoku = new int[9][9];
@@ -158,19 +158,22 @@ public class Sudoku {
     }
 
     public boolean validarFila(int i, int valor) {
+        /*
         return IntStream.range(0, sudoku[i].length)
                 .noneMatch(j -> sudoku[i][j] == valor);
+         */
 
-        /*
+
         for (int j = 0; j < sudoku[i].length; j++) {
             if (sudoku[i][j] == valor) {
                 return false;
             }
         }
-        return true;*/
+        return true;
     }
 
     public boolean validarColumna(int j, int valor) {
+        /*
         var ref = new Object(){
             boolean b = true;
         };
@@ -179,18 +182,20 @@ public class Sudoku {
                 ref.b = false;
         });
         return ref.b;
-        /*
+        */
+
         for (int[] ints : sudoku) {
             if (ints[j] == valor)
                 return false;
         }
-        return true;*/
+        return true;
     }
 
     public void generarSudoku(int nivel) {
         limpiarSudoku();
         Random random = new Random();
 
+        /*
         int[] i1 = {0,1,2};
         int[] j1 = {0,1,2};
         int[] k1 = {0};
@@ -205,8 +210,8 @@ public class Sudoku {
                 }
                 k1[0]++;
             });
-        });
-        /*
+        });*/
+
         for (int i=0; i<3; i++) {
             for (int j=0; j<3; j++) {
                 int num = random.nextInt(9) + 1;
@@ -216,8 +221,9 @@ public class Sudoku {
                     j--;
                 }
             }
-        }*/
+        }
 
+        /*
         int[] i2 = {3,4,5};
         int[] j2 = {3,4,5};
         int[] k2 = {0};
@@ -232,8 +238,8 @@ public class Sudoku {
                 }
                 k2[0]++;
             });
-        });
-        /*
+        });*/
+
         for (int i=3; i<6; i++){
             for (int j=3; j<6; j++){
                 int num = random.nextInt(9) + 1;
@@ -243,8 +249,9 @@ public class Sudoku {
                     j--;
                 }
             }
-        }*/
+        }
 
+        /*
         int[] i3 = {6,7,8};
         int[] j3 = {6,7,8};
         int[] k3 = {0};
@@ -259,8 +266,8 @@ public class Sudoku {
                 }
                 k3[0]++;
             });
-        });
-        /*
+        });*/
+
         for (int i=6; i<9; i++) {
             for (int j=6; j<9; j++) {
                 int num = random.nextInt(9) + 1;
@@ -270,9 +277,9 @@ public class Sudoku {
                     j--;
                 }
             }
-        }*/
+        }
         resolverSudoku();
-
+/*
         var ref = new Object(){
             int i = 0;
             int j = 0;
@@ -291,7 +298,7 @@ public class Sudoku {
                 ref.j++;
             });
             ref.i++;
-        });
+        });*/
 
         for (int i = 0; i < sudoku.length; i++) {
             for (int j = 0; j < sudoku[0].length; j++) {

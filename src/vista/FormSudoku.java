@@ -2,12 +2,11 @@ package vista;
 
 import java.awt.Color;
 import javax.swing.BorderFactory;
-import modelo.Sudoku;
 
 public class FormSudoku extends javax.swing.JFrame {
     public static TableroSudoku tableroSudoku;
     private TableroNumeros tableroNumeros;
-    private FromNiveles fromNiveles;
+    private FormNiveles formNiveles;
     private boolean estadoCrear;
 
     private int xPos;
@@ -282,11 +281,11 @@ public class FormSudoku extends javax.swing.JFrame {
     }
 
     private void lblNuevaPartidaMousePressed(java.awt.event.MouseEvent evt) {
-        if (fromNiveles != null) {
-            fromNiveles.setVisible(true);
+        if (formNiveles != null) {
+            formNiveles.setVisible(true);
         } else {
-            fromNiveles = new FromNiveles(tableroSudoku);
-            fromNiveles.setVisible(true);
+            formNiveles = new FormNiveles(tableroSudoku);
+            formNiveles.setVisible(true);
         }
     }
 
