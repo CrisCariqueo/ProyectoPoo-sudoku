@@ -112,23 +112,6 @@ public class Sudoku {
             }
         }
 
-        /*
-        int[] i2 = {3,4,5};
-        int[] j2 = {3,4,5};
-        int[] k2 = {0};
-        Arrays.stream(j2).forEach(i->{
-            k2[0] = 0;
-            Arrays.stream(j2).forEach(j->{
-                int num = random.nextInt(9) + 1;
-                if (validarCuadrante(i, k2[0], num)) {
-                    sudoku[i][k2[0]] = num;
-                } else {
-                    k2[0]--;
-                }
-                k2[0]++;
-            });
-        });*/
-
         for (int i=3; i<6; i++){
             for (int j=3; j<6; j++){
                 int num = random.nextInt(9) + 1;
@@ -139,23 +122,6 @@ public class Sudoku {
                 }
             }
         }
-
-        /*
-        int[] i3 = {6,7,8};
-        int[] j3 = {6,7,8};
-        int[] k3 = {0};
-        Arrays.stream(j3).forEach(i->{
-            k3[0] = 0;
-            Arrays.stream(j3).forEach(j->{
-                int num = random.nextInt(9) + 1;
-                if (validarCuadrante(i, k3[0], num)) {
-                    sudoku[i][k3[0]] = num;
-                } else {
-                    k3[0]--;
-                }
-                k3[0]++;
-            });
-        });*/
 
         for (int i=6; i<9; i++) {
             for (int j=6; j<9; j++) {
@@ -168,26 +134,6 @@ public class Sudoku {
             }
         }
         resolverSudoku();
-/*
-        var ref = new Object(){
-            int i = 0;
-            int j = 0;
-        };
-        Arrays.stream(sudoku).forEach(i->{
-            ref.j=0;
-            Arrays.stream(i).forEach(j->{
-                int aux = ref.j;
-                int rand = random.nextInt(nivel + 1);
-                ref.j += rand;
-
-
-                for (int k = aux; k < j && k < sudoku.length; k++) {
-                    sudoku[ref.i][k] = 0;
-                }
-                ref.j++;
-            });
-            ref.i++;
-        });*/
 
         for (int i = 0; i < sudoku.length; i++) {
             for (int j = 0; j < sudoku[0].length; j++) {
