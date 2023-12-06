@@ -14,39 +14,6 @@ public class Sudoku {
     }
 
     public boolean resolverSudoku() {
-        /*
-        var ref = new Object(){
-            int i=0;
-            int j;
-            boolean b = true;
-        };
-
-        Arrays.stream(sudoku).anyMatch(i->{
-            ref.j=0;
-            boolean c=Arrays.stream(i).anyMatch(j->{
-                if(j == 0){
-                    int[] valor = {1,2,3,4,5,6,7,8,9};
-                    ref.b = Arrays.stream(valor).anyMatch(val->{
-                        if(validarFila(ref.i, val) && validarColumna(ref.j, val) && validarCuadrante(ref.i, ref.j, val)){
-                            sudoku[ref.i][ref.j] = val;
-                            if(resolverSudoku()) {
-                                return true;
-                            }
-                        }
-                        return false;
-                    });
-                    return true;
-                }
-                ref.j++;
-                return false;
-            });
-            if(c) return false;
-            ref.i++;
-            return true;
-        });
-        return ref.b;*/
-
-
         for (int i = 0; i < sudoku.length; i++) {
             for (int j = 0; j < sudoku[0].length; j++) {
                 if (sudoku[i][j] == 0) {
@@ -67,32 +34,6 @@ public class Sudoku {
     }
 
     public boolean comprobarSudoku(){
-        /*
-        var ref = new Object(){
-            int i=0;
-            int j=0;
-            int aux;
-        };
-        return Arrays.stream(sudoku).anyMatch(i->{
-            ref.j=0;
-            boolean c = Arrays.stream(i).anyMatch(j->{
-                int aux = sudoku[ref.i][ref.j];
-                sudoku[ref.i][ref.j] = 0;
-                if (!validarFila(ref.i, aux) || !validarColumna(ref.j, aux) || !validarCuadrante(ref.i, ref.j, aux)) {
-                    sudoku[ref.i][ref.j] = aux;
-                    return false;
-                }
-                sudoku[ref.i][ref.j] = aux;
-                ref.j++;
-                return true;
-            });
-            if(!c) return false;
-            ref.i++;
-            return true;
-        });*/
-
-
-
         for (int i = 0; i < sudoku.length; i++) {
             for (int j = 0; j < sudoku[0].length; j++) {
                 int aux = sudoku[i][j];
@@ -110,26 +51,6 @@ public class Sudoku {
     public boolean validarCuadrante(int i, int j, int valor) {
         int posI = subCuadranteActual(i);
         int posJ = subCuadranteActual(j);
-
-        /*
-        int[] xArr = {posI-3, posI-2, posI-1};
-        int[] yArr = {posJ-3, posJ-2, posJ-1};
-        var ref = new Object(){
-            int k =xArr[0];
-            int l =yArr[0];
-        };
-        return Arrays.stream(xArr).anyMatch(k->{
-            boolean b =Arrays.stream(yArr).anyMatch(l->{
-                if (sudoku[ref.k][ref.l] == valor) {
-                    return false;
-                }
-                ref.l++;
-                return true;
-            });
-            ref.k++;
-            return !b;
-        });*/
-
 
         for (int k = posI - 3; k < posI; k++) {
             for (int l = posJ - 3; l < posJ; l++) {
@@ -160,12 +81,6 @@ public class Sudoku {
     }
 
     public boolean validarFila(int i, int valor) {
-        /*
-        return IntStream.range(0, sudoku[i].length)
-                .noneMatch(j -> sudoku[i][j] == valor);
-         */
-
-
         for (int j = 0; j < sudoku[i].length; j++) {
             if (sudoku[i][j] == valor) {
                 return false;
@@ -175,17 +90,6 @@ public class Sudoku {
     }
 
     public boolean validarColumna(int j, int valor) {
-        /*
-        var ref = new Object(){
-            boolean b = true;
-        };
-        Arrays.stream(sudoku).forEach(i->{
-            if(i[j] == valor)
-                ref.b = false;
-        });
-        return ref.b;
-        */
-
         for (int[] ints : sudoku) {
             if (ints[j] == valor)
                 return false;
@@ -196,23 +100,6 @@ public class Sudoku {
     public void generarSudoku(int nivel) {
         limpiarSudoku();
         Random random = new Random();
-
-        /*
-        int[] i1 = {0,1,2};
-        int[] j1 = {0,1,2};
-        int[] k1 = {0};
-        Arrays.stream(j1).forEach(i->{
-            k1[0] = 0;
-            Arrays.stream(j1).forEach(j->{
-                int num = random.nextInt(9) + 1;
-                if (validarCuadrante(i, k1[0], num)) {
-                    sudoku[i][k1[0]] = num;
-                } else {
-                    k1[0]--;
-                }
-                k1[0]++;
-            });
-        });*/
 
         for (int i=0; i<3; i++) {
             for (int j=0; j<3; j++) {
