@@ -239,10 +239,10 @@ public class TableroSudoku extends JPanel {
             ref.j=0;
             Arrays.stream(i).forEach(j->{
                 if (sudokuGenerado[ref.i][ref.j] != 0) {
-                    listaTxt[ref.i][ref.j].setText(String.valueOf(sudokuGenerado[ref.i][ref.j]));
-                    listaTxt[ref.i][ref.j].setBackground(txtBackground4);
-                    listaTxt[ref.i][ref.j].setForeground(txtForeground4);
-                    listaTxtGenerados.add(listaTxt[ref.i][ref.j]);
+                    j.setText(String.valueOf(sudokuGenerado[ref.i][ref.j]));
+                    j.setBackground(txtBackground4);
+                    j.setForeground(txtForeground4);
+                    listaTxtGenerados.add(j);
                 }
                 ref.j++;
             });
