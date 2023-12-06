@@ -14,13 +14,13 @@ public class Sudoku {
     }
 
     public boolean resolverSudoku() {
-
+        /*
         var ref = new Object(){
             int i=0;
             int j;
             boolean b = true;
         };
-        /*
+
         Arrays.stream(sudoku).anyMatch(i->{
             ref.j=0;
             boolean c=Arrays.stream(i).anyMatch(j->{
@@ -67,11 +67,12 @@ public class Sudoku {
     }
 
     public boolean comprobarSudoku(){
+        /*
         var ref = new Object(){
             int i=0;
             int j=0;
             int aux;
-        };/*
+        };
         return Arrays.stream(sudoku).anyMatch(i->{
             ref.j=0;
             boolean c = Arrays.stream(i).anyMatch(j->{
@@ -110,12 +111,13 @@ public class Sudoku {
         int posI = subCuadranteActual(i);
         int posJ = subCuadranteActual(j);
 
+        /*
         int[] xArr = {posI-3, posI-2, posI-1};
         int[] yArr = {posJ-3, posJ-2, posJ-1};
         var ref = new Object(){
             int k =xArr[0];
             int l =yArr[0];
-        };/*
+        };
         return Arrays.stream(xArr).anyMatch(k->{
             boolean b =Arrays.stream(yArr).anyMatch(l->{
                 if (sudoku[ref.k][ref.l] == valor) {
