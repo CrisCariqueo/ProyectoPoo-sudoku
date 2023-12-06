@@ -104,36 +104,11 @@ public class TableroSudoku extends JPanel {
                 ref.j++;
             });
             ref.x = txtMargen;
+            ref.y += txtAltura;
+            if((ref.i+1) % 3 == 0)
+                ref.y += txtMargen;
             ref.i++;
         });
-
-        for (int i = 0; i < listaTxt.length; i++) {
-            for (int j = 0; j < listaTxt[0].length; j++) {
-                JTextField txt = new JTextField();
-
-                this.add(txt);
-                txt.setBounds(x, y, txtAncho, txtAltura);
-                txt.setBackground(txtBackground1);
-                txt.setForeground(txtForeground1);
-                txt.setFont(new Font("Montserrat", Font.BOLD, txtTamañoLetra));
-
-                txt.setEditable(false);
-                txt.setCursor(new Cursor(Cursor.HAND_CURSOR));
-                txt.setBorder(BorderFactory.createLineBorder(panelBackground, 1));
-                txt.setVisible(true);
-
-                x += txtAncho;
-                if ((j + 1) % 3 == 0)
-                    x += txtMargen;
-
-                listaTxt[i][j] = txt;
-                generarEventos(txt);
-            }
-            x = txtMargen;
-            y += txtAltura;
-            if ((i + 1) % 3 == 0)
-                y += txtMargen;
-        }
     }
 
     public boolean txtGenerado(JTextField txt) {
