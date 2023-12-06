@@ -70,9 +70,6 @@ public class TableroSudoku extends JPanel {
     }
 
     public void crearCamposTxt() {
-        int x = txtMargen;
-        int y = txtMargen;
-
         var ref = new Object(){
             int x = txtMargen;
             int y = txtMargen;
@@ -363,6 +360,7 @@ public class TableroSudoku extends JPanel {
         else
             JOptionPane.showMessageDialog(null, "No hay solución", "Error", JOptionPane.ERROR_MESSAGE);
     }
+
     public void resolver(){
         sudoku.limpiarSudoku();
         var ref = new Object(){
