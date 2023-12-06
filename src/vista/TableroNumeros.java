@@ -5,6 +5,7 @@ import java.awt.Cursor;
 import java.awt.Font;
 import java.awt.event.MouseEvent;
 import java.awt.event.MouseListener;
+import java.util.Arrays;
 import javax.swing.BorderFactory;
 import javax.swing.JPanel;
 import javax.swing.JTextField;
@@ -43,13 +44,15 @@ public class TableroNumeros extends JPanel{
        crearCamposTxt();
    }
    public void crearCamposTxt(){
-       int x = txtMargen;
-       int y = txtMargen;
-       
-       for (int i = 0; i < 9; i++) {
+        int[] auxArr = {0,1,2,3,4,5,6,7,8};
+       var ref = new Object(){
+           int x = txtMargen;
+           int y = txtMargen;
+       };
+       Arrays.stream(auxArr).forEach(i->{
            JTextField txt = new JTextField();
            this.add(txt);
-           txt.setBounds(x, y, txtAncho, txtAltura);
+           txt.setBounds(ref.x, ref.y, txtAncho, txtAltura);
            txt.setBackground(txtBackground1);
            txt.setForeground(txtForeground1);
            txt.setCursor(new Cursor(Cursor.HAND_CURSOR));
@@ -57,13 +60,13 @@ public class TableroNumeros extends JPanel{
            txt.setBorder(BorderFactory.createLineBorder(panelBackground,1));
            txt.setFont(new Font("MontSerrat",Font.BOLD,txtTamañoLetra));
            txt.setText(String.valueOf(i+1));
-           
-           y+=txtAltura;
-           if((i+1)%3==0)
-               y+=txtMargen;
+
+           ref.y += txtAltura;
+           if((i+1) % 3 == 0)
+               ref.y += txtMargen;
 
            generarEventosTxt(txt);
-       }
+       });
    }
    public void generarEventosTxt(JTextField txt){
        MouseListener evento = new MouseListener() {
@@ -76,7 +79,6 @@ public class TableroNumeros extends JPanel{
                //evitar cambiar numeros usando tablero de num
                if(tableroSudoku.txtGenerado(tableroSudoku.txtSelected))
                    return;
-
                tableroSudoku.txtSelected.setText(txt.getText());
            }
 
