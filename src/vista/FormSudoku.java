@@ -303,7 +303,6 @@ public class FormSudoku extends javax.swing.JFrame {
             estadoCrear = false;
             tableroSudoku.limpiarTxt();
             lblCrear.setText("              LISTO");
-
         } else {
             if (tableroSudoku.crearSudokuPersonalizado()) {
                 lblNuevaPartida.setVisible(true);
@@ -313,9 +312,7 @@ public class FormSudoku extends javax.swing.JFrame {
                 estadoCrear = true;
                 lblCrear.setText("              CREAR");
             }
-
         }
-
     }
 
     private void lblComprobarMousePressed(java.awt.event.MouseEvent evt) {
